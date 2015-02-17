@@ -10,3 +10,9 @@ window.lonload = function() {
 	assert(true, "The test suite is running.");
 	assert(false, "Fail!");
 }
+
+(function(){
+	var results;
+	this.assert = assert();
+	this.assert(true,'works this way');
+})();
