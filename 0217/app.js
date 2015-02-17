@@ -6,13 +6,14 @@ function assert( value, desc ) {
 	document.getElementById("results").appendChild(li);
 }
 
-window.lonload = function() {
+window.onload = function() {
 	assert(true, "The test suite is running.");
 	assert(false, "Fail!");
 }
 
-(function(){
+;(function(){
 	var results;
-	this.assert = assert();
+	this.assert = assert;
 	this.assert(true,'works this way');
+	return 0;
 })();
