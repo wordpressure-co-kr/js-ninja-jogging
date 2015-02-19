@@ -1,17 +1,7 @@
 
-function assert( value, desc ) {
-
-	var li = document.createElement("li");
-	li.className = value ? "pass" : "fail";
-	li.appendChild(document.createTextNode(desc));
-//	document.getElementById("results").appendChild(li);
-	results.appendChild(li);	
-	if (!value) {
-		li.parentNode.parentNode.className = "fail";
-	}
-
-	return li;
-}
+//function assert( value, desc ) {
+//
+//}
 
 /*window.onload = function() {
 	assert(true, "The test suite is running.");
@@ -20,7 +10,19 @@ function assert( value, desc ) {
 
 ;(function(){
 	var results;
-	this.assert = assert;
+	this.assert = function assert(value, desc) {
+	
+		var li = document.createElement("li");
+		li.className = value ? "pass" : "fail";
+		li.appendChild(document.createTextNode(desc));
+	//	document.getElementById("results").appendChild(li);
+		results.appendChild(li);	
+		if (!value) {
+			li.parentNode.parentNode.className = "fail";
+		}
+	
+		return li;		
+	};
 	//this.assert(true,'works this way');
 	this.test = function test(name, fn) {
 		results = document.getElementById("result");
