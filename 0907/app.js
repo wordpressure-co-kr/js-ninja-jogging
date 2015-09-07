@@ -1,9 +1,7 @@
 
-assert(false, "elapsed time is " + elapsed);
 
+var text = "you can see this";
 
-(function() {
-    console.log(this);
-})();
+function useless(callback) { return callback(); }
 
-console.log(10);
+assert(useless(function() { return text; }) === text, "Working..");
